@@ -14,6 +14,7 @@ const lowerSnakeCase = /^[a-z][a-z0-9]*(_[a-z0-9]+)*$/;
 const upperSnakeCase = /^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$/;
 const upperCamelCase = /^[A-Z][a-z0-9]+([A-Z][a-z0-9]+)*$/;
 const lowerCamelCase = /^[a-z][a-z0-9]*([A-Z][a-z0-9]+)*$/;
+const istParameterNaming = /^[_limit|_offset|a-z][a-z0-9]*([A-Z][a-z0-9]+)*$/;
 const k8sCamelCase = /^[a-z][a-z0-9]*([A-Z]+[a-z0-9]*)*$/;
 const lowerDashCase = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
 const upperDashCase = /^[A-Z][A-Z0-9]*(-[A-Z0-9]+)*$/;
@@ -31,6 +32,9 @@ module.exports = (string, convention) => {
 
     case 'lower_camel_case':
       return lowerCamelCase.test(string);
+
+    case 'ist_parameter_naming':
+      return istParameterNaming.test(string);
 
     case 'k8s_camel_case':
       return k8sCamelCase.test(string);

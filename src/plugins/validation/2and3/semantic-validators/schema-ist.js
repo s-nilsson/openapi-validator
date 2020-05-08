@@ -214,7 +214,8 @@ function typeFormatErrors(obj, path, isOAS3, messages, checkStatus) {
     'binary',
     'date',
     'date-time',
-    'password'
+    'password',
+    'email'
   ];
   const validTypes = [
     'integer',
